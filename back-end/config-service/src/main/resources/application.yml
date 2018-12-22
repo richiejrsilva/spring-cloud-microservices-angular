@@ -1,0 +1,12 @@
+server:
+  port: 8888
+  #contextPath: /config-server
+  
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/richiejrsilva/shopping-list-config-repo #Because this is a test there is no considered a config file per env such as dev, uat, sit, prod...
+          #username: username
+          #password: password

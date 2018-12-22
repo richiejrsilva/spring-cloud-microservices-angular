@@ -1,0 +1,26 @@
+<div>
+	<nav class="navbar navbar-default navbar-expand-md navbar-light">
+		<div class="container">
+			<a class="navbar-brand" routerLink="/"> <img alt="logo"
+				src="assets/img/logo-ex.png"> {{ getAppTitle() }}
+			</a>
+			<button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse"
+				[ngClass]="{ 'show': navbarOpen }">
+
+				<!-- Building the top navigator -->
+				<ul class="navbar-nav d-flex ml-auto justify-content-between" *ngFor="let navItem of buildNavbar()">
+				  <li class="nav-item"><a class="nav-link active" routerLink="{{ navItem.getPathDescriptor() }}">{{ navItem.getLabel() }}</a>
+				  </li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+</div>
+<div class="container">
+	<hr />
+</div>
+

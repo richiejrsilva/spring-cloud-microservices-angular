@@ -1,0 +1,43 @@
+<div class="row row h-100 justify-content-center align-items-center">
+  
+  <div class="col-md-5 col-md-offset-2 text-center">
+     <h1>SignUp </h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    
+      <div class="form-group">
+        <label class="text-center" for="email">Email address:</label>
+        
+        <input type="email" class="form-control" formControlName="email" id="email">
+        <div *ngIf="submitted && signUpForm.controls.email.errors" class="error">
+          <div *ngIf="signUpForm.controls.email.errors.required"><small class="text-danger">Email is required</small></div>
+          <div *ngIf="signUpForm.controls.email.errors.email"><small class="text-danger">Email must be a valid email address</small></div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="text-center" for="name">Display Name:</label>
+        
+        <input type="name" class="form-control" formControlName="name" id="name">
+        <div *ngIf="submitted && signUpForm.controls.name.errors" class="error">
+          <div *ngIf="signUpForm.controls.name.errors.required">
+          <small class="text-danger">Name is required</small>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" formControlName="password" id="pwd">
+        <div *ngIf="submitted && signUpForm.controls.password.errors" class="error">
+          <div *ngIf="signUpForm.controls.password.errors.required">
+          	<small class="text-danger">Password is required</small>
+          </div>
+        </div>
+      </div>
+      
+      <button class="btn btn-success btn-block">SigUp</button>
+      
+    </form>
+    
+  </div>
+</div>
