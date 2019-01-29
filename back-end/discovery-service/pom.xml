@@ -12,7 +12,7 @@
 	<description>eureka discovery register service</description>
 
 	<parent>
-		<groupId>com.harmonyit.assessments.gamehouse</groupId>
+		<groupId>com.harmonyit.shoppinglist</groupId>
 		<artifactId>back-end</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>

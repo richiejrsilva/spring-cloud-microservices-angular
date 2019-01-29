@@ -6,21 +6,18 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>config-service</artifactId>
-	
-	<name>config-service</name>
+	<artifactId>shopping-list-service</artifactId>
+
+	<name>shopping-list-service</name>
 
 	<parent>
 		<groupId>com.harmonyit.shoppinglist</groupId>
-		<artifactId>back-end</artifactId>
+		<artifactId>core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>
+		<!-- Dependencies are common to all microservices and are declared on parent pom -->
 	</dependencies>
 
 	<build>

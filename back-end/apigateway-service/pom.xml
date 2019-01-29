@@ -11,7 +11,7 @@
 	<name>apigateway-service</name>
 
 	<parent>
-		<groupId>com.harmonyit.assessments.gamehouse</groupId>
+		<groupId>com.harmonyit.shoppinglist</groupId>
 		<artifactId>back-end</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -20,10 +20,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

@@ -7,8 +7,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.harmonyit.assessments.gamehouse</groupId>
-		<artifactId>shopping-list-assessment</artifactId>
+		<groupId>com.harmonyit.shoppinglist</groupId>
+		<artifactId>spring-cloud-microservices-angular-shoppinglist</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
