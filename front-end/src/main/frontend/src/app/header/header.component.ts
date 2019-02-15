@@ -8,7 +8,7 @@ import { Navigator } from "../ui/navigator";
 })
 export class HeaderComponent {
 
-	private appTitle = "GameHouse Assessment";
+	private appTitle = "Cloud Shopping List";
 	
 	private navbarOpen = false;
 	

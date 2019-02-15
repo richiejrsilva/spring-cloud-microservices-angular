@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: hague-auth
+  profiles:
+    active: test,mock
+  cloud:
+    config:
+      enabled: false
+  datasource:
+    data: classpath*:/mock_data*.sql
+
+oauth2:
+  clients:
+    - name: password
+      types: password,refresh_token
+      clientId: XXXXX
+      clientSecret: YYYYY
+      scopes: openid
+      expirationMinutes: 30

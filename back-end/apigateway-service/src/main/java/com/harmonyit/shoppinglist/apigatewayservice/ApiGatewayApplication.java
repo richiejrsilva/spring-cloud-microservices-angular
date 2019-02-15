@@ -27,7 +27,7 @@ public class ApiGatewayApplication {
 	}
 	
 	/**
-	 * Cors filter. This is allowing requests from all origins with all header types for all kind of req type
+	 * Cors filter. Allowing requests from all origins with all header types for all kind of req type
 	 * NOT A PRODUCTION SOLUTION
 	 *
 	 * @return the cors filter

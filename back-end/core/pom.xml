@@ -18,7 +18,6 @@
 	<modules>
 		<module>item-service</module>
 		<module>user-service</module>
-		<module>common-api</module>
 		<module>shopping-list-service</module>
 	</modules>
 
@@ -35,13 +34,7 @@
 
 		<dependencies>
 
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-openfeign</artifactId>
-				<version>2.0.2.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+			
 		</dependencies>
 
 	</dependencyManagement>
@@ -61,20 +54,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
