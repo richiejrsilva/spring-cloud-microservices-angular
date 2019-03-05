@@ -1,5 +1,7 @@
 package com.harmonyit.shoppinglist.authservice.security.db;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -17,13 +19,14 @@ import com.harmonyit.shoppinglist.authservice.security.db.model.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-  /**
-   * Finding a user by username and his roles.
-   *
-   * @param username the username
-   * @return the user
-   */
+  
+	/**
+	 * Find by user name. Get the user as well as his role
+	 *
+	 * @param username the username
+	 * @return the optional
+	 */
 	@Query("FROM User u JOIN FETCH u.roles WHERE u.userName = ?1")
-	User findByUserName(String username);
+	Optional<User> findByUserName(String username);
 	
 }

@@ -9,8 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.harmonyit.shoppinglist.authservice.security.db.UserRepository;
 
 /**
- * It is used throughout the framework as a user DAO and is the strategy used by
- * the DaoAuthenticationProvider.
+ * Custom implementation for UserDetailsService like a DaoAuthenticationProvider strategy 
  * https://docs.spring.io/spring-security/site/docs/4.2.11.BUILD-SNAPSHOT/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html
  * https://www.programcreek.com/java-api-examples/?code=sniperqpc/Spring-cloud-gather/Spring-cloud-gather-master/auth-service/src/main/java/com/piggymetrics/auth/config/AuthorizationServerConfiguration.java#
  */
@@ -27,21 +26,14 @@ public class UserDetailsServiceImpl implements org.springframework.security.core
 		LOG.info("Instantiating {}", this.getClass().getName());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.springframework.security.core.userdetails.UserDetailsService#
-	 * loadUserByUsername(java.lang. String)
+	/**
+	 * Here we can connect to a ldap or a service to get the user auth. I'm simply connecting to a user repo. and quering a oracle db to return the user and his role.
 	 */
 	@Override
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
-		//add comment it can connect to a ldap os db with users. i'm using a simple oracle db.
-		//create a optional return in repo to to orElseThrow
-		final com.harmonyit.shoppinglist.authservice.security.db.model.User user = userRepository.findByUserName(username).orElseThrow(() -> new RuntimeException("User not found: " + username));
-
-		if (user == null) {
-			throw new UsernameNotFoundException(username);
-		}
+		
+		final com.harmonyit.shoppinglist.authservice.security.db.model.User user = userRepository
+				.findByUserName(username).orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
 		
 		return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(), user.getAuthorities());
 		
